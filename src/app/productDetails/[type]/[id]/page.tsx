@@ -10,11 +10,14 @@ import type { RootState, AppDispatch } from "@/store/store";
 import type { product } from "@/types/products";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import { FaListUl, FaTags } from "react-icons/fa";
 
 function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
   const dispatch = useDispatch<AppDispatch>();
+  const [showCategories, setShowCategories] = useState(false);
+  const [showBrands, setShowBrands] = useState(false);
 
   const { data: categories, loading: categoriesLoading } = useSelector(
     (state: RootState) => state.categories
@@ -73,12 +76,95 @@ function Page() {
 
   return (
     <div className="pt-15">
-      {/* Category Tabs */}
-      <div className="fixed right-0 bg-gray-100 mt-3">
-        <ul className=" overflow-scroll pt-11 h-53 text-center">
-        <h3 className="text-black bg-(--bg-color) w-45 font-bold fixed">
-          Categories
-        </h3>
+      <div className="fixed top-29 right-4 flex flex-col gap-3 z-50 md:hidden">
+        <button
+          onClick={() => {
+            setShowCategories(!showCategories);
+            setShowBrands(false);
+          }}
+          className="bg-(--bg-color) text-white p-3 rounded-full shadow-lg"
+        >
+          <FaListUl size={20} />
+        </button>
+
+        <button
+          onClick={() => {
+            setShowBrands(!showBrands);
+            setShowCategories(false);
+          }}
+          className="bg-(--bg-color) text-white p-3 rounded-full shadow-lg"
+        >
+          <FaTags size={20} />
+        </button>
+      </div>
+      {showCategories && (
+        <div className="fixed inset-0 bg-black/40 z-40 md:hidden ">
+          <div className="absolute right-0 top-0 h-full w-64 bg-white p-4 overflow-y-auto pt-27 overflow-scroll">
+            <h3 className="font-bold mb-4 text-(--bg-color)">Categories</h3>
+
+            <ul className="flex flex-col gap-3">
+              <li>
+                <Link
+                  href="/productDetails/all/all"
+                  onClick={() => setShowCategories(false)}
+                  className="text-black"
+                >
+                  All
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/productDetails/sales/all"
+                  onClick={() => setShowCategories(false)}
+                  className="text-black"
+                >
+                  Sales
+                </Link>
+              </li>
+
+              {categories.map((category) => (
+                <li key={category.id}>
+                  <Link
+                    href={`/productDetails/category/${category.id}`}
+                    onClick={() => setShowCategories(false)}
+                    className="text-black"
+                  >
+                    {category.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+      {/* Brands Panel - Mobile */}
+      {showBrands && (
+        <div className="fixed inset-0 bg-black/40 z-40 md:hidden">
+          <div className="absolute right-0 top-0 h-full w-64 bg-white p-4 overflow-y-auto pt-27">
+            <h3 className="font-bold mb-4 text-(--bg-color)">Brands</h3>
+
+            <ul className="flex flex-col gap-3">
+              {brands.map((brand) => (
+                <li key={brand.id}>
+                  <Link
+                    href={`/productDetails/brand/${brand.id}`}
+                    onClick={() => setShowBrands(false)}
+                    className="text-black"
+                  >
+                    {brand.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+      <div className="fixed right-0 bg-gray-100 mt-3 hidden md:block">
+        <ul className=" overflow-scroll pt-11 h-53 text-center scroll-hidden">
+          <h3 className="text-black bg-(--bg-color) w-45 font-bold fixed">
+            Categories
+          </h3>
           <li className="pt-6">
             {" "}
             <Link
@@ -116,11 +202,11 @@ function Page() {
           })}
         </ul>
         <div className="text-center">
-        <h3 className="text-black fixed bg-(--bg-color) w-45 font-bold">
-          Brands
-        </h3>
+          <h3 className="text-black fixed bg-(--bg-color) w-45 font-bold">
+            Brands
+          </h3>
         </div>
-        <ul className=" overflow-scroll h-45 text-center pt-5 scrollbar-hide">
+        <ul className=" overflow-scroll h-45 text-center pt-5 scroll-hidden">
           {brands.map((brand) => {
             const isActive = type === "brand" && id === brand.id.toString();
             return (
@@ -141,8 +227,8 @@ function Page() {
         </ul>
       </div>
       {/* Products Display */}
-      <div className="row flex flex-col mt-10 mb-10 pe-20">
-        <div className="p-10 max-w-full ml-auto mr-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 ">
+      <div className="row flex flex-col mt-10 mb-10 pe-7">
+        <div className="p-10 max-w-full ml-auto mr-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 ">
           {filteredProducts.length > 0 ? (
             filteredProducts.map((item: product) => (
               <div
@@ -165,7 +251,7 @@ function Page() {
                   </div>
                 </div>
                 <div className="px-5 pt-0">
-                  <h3 className="text-[0.9rem] font-medium text-black">
+                  <h3 className="text-[0.9rem] font-medium text-black ">
                     {item.name}
                   </h3>
                   <span className="text-[13px] text-black">
