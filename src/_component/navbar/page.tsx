@@ -54,7 +54,7 @@ const page = () => {
           <div
             className={` ${
               open
-                ? "flex bg-(--bg-color) absolute md:relative top-16 left-0 w-full h-auto mt-6"
+                ? "flex bg-(--bg-color) absolute md:relative top-16 left-0 w-full h-auto mt-9"
                 : "hidden"
             } md:flex flex-col md:flex-row  items-center md:justify-center  `}
           >

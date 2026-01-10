@@ -76,13 +76,13 @@ function Page() {
 
   return (
     <div className="pt-15">
-      <div className="fixed top-29 right-0 flex flex-col gap-3 z-50 ">
+      <div className="fixed top-29 right-[-10] flex flex-col gap-3 z-50 ">
         <button
           onClick={() => {
             setShowCategories(!showCategories);
             setShowBrands(false);
           }}
-          className="bg-(--bg-color) text-white p-3 rounded-l-full shadow-lg"
+          className="bg-(--bg-color) text-white p-3 rounded-l-full shadow-lg cursor-pointer"
         >
           <FaListUl size={20} />
         </button>
@@ -92,14 +92,14 @@ function Page() {
             setShowBrands(!showBrands);
             setShowCategories(false);
           }}
-          className="bg-(--bg-color) text-white p-3 rounded-l-full shadow-lg"
+          className="bg-(--bg-color) text-white p-3 rounded-l-full shadow-lg cursor-pointer"
         >
           <FaTags size={20} />
         </button>
       </div>
       {showCategories && (
         <div className="fixed inset-0 bg-black/40 z-40  ">
-          <div className="absolute right-0 top-0 h-full w-64 bg-white p-4 overflow-y-auto pt-27 overflow-scroll">
+          <div className="absolute right-0 top-0 h-full w-64 bg-white p-4 overflow-y-auto pt-29 overflow-scroll">
             <h3 className="font-bold mb-4 text-(--bg-color)">Categories</h3>
 
             <ul className="flex flex-col gap-3">
@@ -141,7 +141,7 @@ function Page() {
       {/* Brands Panel - Mobile */}
       {showBrands && (
         <div className="fixed inset-0 bg-black/40 z-40 ">
-          <div className="absolute right-0 top-0 h-full w-64 bg-white p-4 overflow-y-auto pt-27">
+          <div className="absolute right-0 top-0 h-full w-64 bg-white p-4 overflow-y-auto pt-29">
             <h3 className="font-bold mb-4 text-(--bg-color)">Brands</h3>
 
             <ul className="flex flex-col gap-3">
