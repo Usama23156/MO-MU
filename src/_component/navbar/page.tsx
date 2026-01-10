@@ -31,7 +31,7 @@ const page = () => {
     <div>
       <div className="fixed z-1000 right-0 top-0 w-full ">
         <div
-          className={`flex justify-between items-center transition-[0.5s] px-6 lg:px-25 py-2 md:py-3  ${
+          className={`flex relative justify-between items-center transition-[0.5s] px-6 lg:px-25 py-2 md:py-3  ${
             scrollPosition > 50 ? "bg-(--bg-color)" : "bg-white"
           }`}
         >
@@ -45,7 +45,7 @@ const page = () => {
           </Link>
           <div
             onClick={() => setOpen(!open)}
-            className={`icon md:hidden  cursor-pointer  text-(--bg-color) text-2xl  z-100001 flex  flex-wrap md:flex-nowrap justify-between items-center ${
+            className={`icon md:hidden  cursor-pointer  text-(--bg-color) text-2xl  z-100001 flex  flex-wrap md:flex-nowrap justify-between items-center absolute left-50 bottom-2 ${
               scrollPosition > 50 ? "text-(--text-color)" : "text-(--bg-color)"
             }`}
           >

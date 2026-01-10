@@ -76,13 +76,13 @@ function Page() {
 
   return (
     <div className="pt-15">
-      <div className="fixed top-29 right-4 flex flex-col gap-3 z-50 md:hidden">
+      <div className="fixed top-29 right-0 flex flex-col gap-3 z-50 ">
         <button
           onClick={() => {
             setShowCategories(!showCategories);
             setShowBrands(false);
           }}
-          className="bg-(--bg-color) text-white p-3 rounded-full shadow-lg"
+          className="bg-(--bg-color) text-white p-3 rounded-l-full shadow-lg"
         >
           <FaListUl size={20} />
         </button>
@@ -92,13 +92,13 @@ function Page() {
             setShowBrands(!showBrands);
             setShowCategories(false);
           }}
-          className="bg-(--bg-color) text-white p-3 rounded-full shadow-lg"
+          className="bg-(--bg-color) text-white p-3 rounded-l-full shadow-lg"
         >
           <FaTags size={20} />
         </button>
       </div>
       {showCategories && (
-        <div className="fixed inset-0 bg-black/40 z-40 md:hidden ">
+        <div className="fixed inset-0 bg-black/40 z-40  ">
           <div className="absolute right-0 top-0 h-full w-64 bg-white p-4 overflow-y-auto pt-27 overflow-scroll">
             <h3 className="font-bold mb-4 text-(--bg-color)">Categories</h3>
 
@@ -140,7 +140,7 @@ function Page() {
       )}
       {/* Brands Panel - Mobile */}
       {showBrands && (
-        <div className="fixed inset-0 bg-black/40 z-40 md:hidden">
+        <div className="fixed inset-0 bg-black/40 z-40 ">
           <div className="absolute right-0 top-0 h-full w-64 bg-white p-4 overflow-y-auto pt-27">
             <h3 className="font-bold mb-4 text-(--bg-color)">Brands</h3>
 
@@ -160,7 +160,7 @@ function Page() {
           </div>
         </div>
       )}
-      <div className="fixed right-0 bg-gray-100 mt-3 hidden md:block">
+      {/* <div className="fixed right-0 bg-gray-100 mt-3 hidden md:block">
         <ul className=" overflow-scroll pt-11 h-53 text-center scroll-hidden">
           <h3 className="text-black bg-(--bg-color) w-45 font-bold fixed">
             Categories
@@ -225,16 +225,16 @@ function Page() {
             );
           })}
         </ul>
-      </div>
+      </div> */}
       {/* Products Display */}
-      <div className="row flex flex-col mt-10 mb-10 pe-7">
+      <div className="row flex flex-col mt-10 mb-10 ">
         <div className="p-10 max-w-full ml-auto mr-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 ">
           {filteredProducts.length > 0 ? (
             filteredProducts.map((item: product) => (
               <div
                 key={item.id}
                 onClick={() => openModal(item)}
-                className="p-0 mb-2 flex flex-col justify-center rounded-lg border border-(--bg-color) shadow-lg hover:scale-95 transition-all duration-200 relative overflow-hidden w-full cursor-pointer "
+                className="p-0 mb-2 flex flex-col justify-center rounded-lg border border-(--bg-color) shadow-lg hover:scale-95 transition-all duration-200 relative overflow-hidden w-full cursor-pointer px-3 "
               >
                 {item.sale && (
                   <div className="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-2 py-1 shadow-lg z-10">
