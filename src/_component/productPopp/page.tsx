@@ -6,7 +6,7 @@ import { addCart } from "@/store/cartSlice";
 
 interface Product {
   id: number;
-  img: string;
+  image: string;
   name: string;
   price: number; 
   descrption: string;
@@ -65,7 +65,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
           </button>
           <div className="md:flex gap-x-5 items-center pt-2 pb-4 px-3">
             <img
-              src={product.img}
+              src={product.image}
               alt={product.name}
               className="rounded-lg w-72 lg:max-w-60 m-auto"
             />
@@ -107,7 +107,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
                   <button
                     onClick={addToCart}
                     disabled={quantity <= 0}
-                    className="bg-(--main-color) text-white py-2 rounded-lg cursor-pointer w-full disabled:opacity-50"
+                    className="bg-[#F3F5F9] text-(--text-color) py-2 rounded-lg cursor-pointer w-full "
                   >
                     Add to Cart
                   </button>

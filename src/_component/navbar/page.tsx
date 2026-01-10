@@ -87,7 +87,7 @@ const page = () => {
               </li>
               <li className="relative">
                 <Link
-                  href="/"
+                  href="/productDetails/sales/all"
                   onClick={() => setOpen(false)}
                   className={`font-bold text-base md:text-(--bg-color) text-(--text-color) ${
                     scrollPosition > 50

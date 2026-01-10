@@ -29,7 +29,7 @@ export default function CategoriesPage() {
         {data.map(category => (
           <Link
             key={category.id}
-            href={`/categories/${category.id}`}
+            href={`/productDetails/category/${category.id}`}
             className="border rounded-lg p-4 text-center hover:shadow pl-20 md:pl-72"
           >
             <div className='justify-center items-center flex ' data-aos="fade-up">

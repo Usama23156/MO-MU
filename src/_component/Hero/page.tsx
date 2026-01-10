@@ -32,7 +32,7 @@ const page = () => {
             <div className="absolute inset-0 overflow-hidden ">
               <img
                 loading="lazy"
-                src="/hero1.jpg"
+                src="/Hero1.png"
                 alt="Grocery Products"
                 className="w-screen h-full object-cover min-h-full min-w-fit"
               />
@@ -56,7 +56,7 @@ const page = () => {
                 <p className="text-white/90 text-lg mb-6">
                   Only this week. Don't miss...
                 </p>
-                <Link href="/menu">
+                <Link href="/productDetails/all/all">
                 <button
                   className="bg-(--bg-color) text-white px-6 py-3 rounded-lg font-medium transition-colors cursor-pointer"
                   >
@@ -96,7 +96,7 @@ const page = () => {
                 <p className="text-white/90 text-lg mb-6">
                   Only this week. Don't miss...
                 </p>
-                <Link href="/menu">
+                <Link href="/productDetails/all/all">
                 <button
                   className="bg-(--bg-color) text-white px-6 py-3 rounded-lg font-medium transition-colors cursor-pointer"
                   >

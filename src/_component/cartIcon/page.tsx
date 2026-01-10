@@ -52,7 +52,7 @@ function Page() {
       <Link href="/cart">
         <div className="relative">
           {isClient && totalItems > 0 && (
-            <div className="absolute top-0 right-0  text-white text-[10px] `font-[400]` w-4 h-4 rounded-full text-center">
+            <div className="absolute bottom-6 right-0  text-(--text-color) text-[12px]  font-bold w-4 h-4 rounded-full text-center">
               {totalItems}
             </div>
           )}

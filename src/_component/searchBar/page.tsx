@@ -31,7 +31,7 @@ function page() {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder="Search products..."
-          className={`px-3 py-1 rounded border border-(--bg-color) focus:outline-none [] text-(--text-color) ${
+          className={` py-1 rounded border border-(--bg-color) focus:outline-none [] text-(--text-color) ${
             scrollPosition > 50 ? "border-(--main-color)" : ""
           } `}
         />

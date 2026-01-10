@@ -4,6 +4,7 @@ import  Hero  from "@/_component/Hero/page";
 import Offers from "@/_component/offers/page";
 import AOS from "aos"
 import "aos/dist/aos.css"
+import BrandSwaper from "@/_component/brand swiper/page"
 
 
 export default function Home() {
@@ -23,6 +24,8 @@ export default function Home() {
     <>
     <div>
       <Hero/>
+      <BrandSwaper/>
+      <img src="hero1.jpg" alt="" />
       <Offers/>
     </div>
     </>

@@ -23,7 +23,7 @@ export default function Brands() {
       {data.map(brand  => (
         <Link
             key={brand.id}
-            href={`/categories/${brand.id}`}
+            href={`/productDetails/brand/${brand.id}`}
             className="border rounded-lg p-4 text-center hover:shadow"
           >
             {brand.image && (

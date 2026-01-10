@@ -15,7 +15,7 @@ export default function page({ data }: { data: any }) {
     <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 border-b ">
       <div className="flex items-center gap-4 w-full sm:w-1/4">
         <img
-          src={data.product.img}
+          src={data.product.image}
           alt={data.product.name}
           className="w-16 h-16 object-cover rounded"
         />

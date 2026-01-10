@@ -1,8 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
+import Providers from "./providers"
 import Navbar from "@/_component/navbar/page"
 import Footer from "@/_component/footer/page"
-import Providers from "./providers"
 import { Suspense } from "react"
 
 const geistSans = Geist({
@@ -15,18 +15,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 })
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Providers>
-          <Suspense>
+          <Suspense fallback={null}>
             <Navbar />
             {children}
             <Footer />
