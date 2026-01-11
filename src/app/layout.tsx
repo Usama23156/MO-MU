@@ -18,11 +18,13 @@ const geistMono = Geist_Mono({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col` }>
         <Providers>
           <Suspense fallback={null}>
             <Navbar />
+            <main className="flex-1">
             {children}
+            </main>
             <Footer />
           </Suspense>
         </Providers>
