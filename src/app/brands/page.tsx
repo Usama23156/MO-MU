@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import type { RootState, AppDispatch } from '@/store/store'
 import { fetchBrands } from '@/store/brandsSlice'
 import Link from 'next/link'
+import Loading from "@/_component/loading/page"
 
 export default function Brands() {
   const dispatch = useDispatch<AppDispatch>()
@@ -16,10 +17,19 @@ export default function Brands() {
     dispatch(fetchBrands())
   }, [dispatch])
 
-  if (loading) return <p>Loading...</p>
+   const isLoading =
+  loading ;
+
+if (isLoading) {
+  return (
+    <div className="flex justify-center items-center min-h-screen text-black">
+      <Loading/>
+    </div>
+  );
+}
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-5 pt-32">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-5 pt-32" >
       {data.map(brand  => (
         <Link
             key={brand.id}

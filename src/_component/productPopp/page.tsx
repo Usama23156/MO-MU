@@ -107,7 +107,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
                   <button
                     onClick={addToCart}
                     disabled={quantity <= 0}
-                    className="bg-[#F3F5F9] text-(--text-color) py-2 rounded-lg cursor-pointer w-full "
+                    className="bg-[#F3F5F9] text-(--text-color) py-2 rounded-lg cursor-pointer w-full disabled:opacity-50"
                   >
                     Add to Cart
                   </button>

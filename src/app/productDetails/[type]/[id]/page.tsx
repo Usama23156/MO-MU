@@ -11,6 +11,7 @@ import type { product } from "@/types/products";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { FaListUl, FaTags } from "react-icons/fa";
+import Loading from "@/_component/loading/page"
 
 function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,10 +20,10 @@ function Page() {
   const [showCategories, setShowCategories] = useState(false);
   const [showBrands, setShowBrands] = useState(false);
 
-  const { data: categories, loading: categoriesLoading } = useSelector(
+  const { data: categories } = useSelector(
     (state: RootState) => state.categories
   );
-  const { data: brands, loading: brandsLoading } = useSelector(
+  const { data: brands } = useSelector(
     (state: RootState) => state.brands
   );
 
@@ -70,13 +71,21 @@ function Page() {
 
     return [];
   }, [products, type, id]);
+const isLoading =
+  loading ;
 
-  if (loading) return <p>Loading...</p>;
-  if (categoriesLoading) return <p>Loading categories...</p>;
+if (isLoading) {
+  return (
+    <div className="flex justify-center items-center min-h-screen text-black">
+      <Loading/>
+    </div>
+  );
+}
+
 
   return (
-    <div className="pt-15">
-      <div className="fixed top-29 right-[-10] flex flex-col gap-3 z-50 ">
+    <div className="pt-29">
+      <div className="fixed top-35 right-[-10] flex flex-col gap-3 z-50 ">
         <button
           onClick={() => {
             setShowCategories(!showCategories);
@@ -98,8 +107,8 @@ function Page() {
         </button>
       </div>
       {showCategories && (
-        <div className="fixed inset-0 bg-black/40 z-40  ">
-          <div className="absolute right-0 top-0 h-full w-64 bg-white p-4 overflow-y-auto pt-29 overflow-scroll">
+        <div className="fixed inset-0 z-40 ">
+          <div className="absolute right-0 top-0 h-full w-64 bg-gray-100 border border-(--bg-color) p-4 overflow-y-auto pt-29 overflow-scroll">
             <h3 className="font-bold mb-4 text-(--bg-color)">Categories</h3>
 
             <ul className="flex flex-col gap-3">
@@ -140,8 +149,8 @@ function Page() {
       )}
       {/* Brands Panel - Mobile */}
       {showBrands && (
-        <div className="fixed inset-0 bg-black/40 z-40 ">
-          <div className="absolute right-0 top-0 h-full w-64 bg-white p-4 overflow-y-auto pt-29">
+        <div className="fixed inset-0 z-40 ">
+          <div className="absolute right-0 top-0 h-full w-64 bg-gray-100 border border-(--bg-color) p-4 overflow-y-auto pt-29">
             <h3 className="font-bold mb-4 text-(--bg-color)">Brands</h3>
 
             <ul className="flex flex-col gap-3">
@@ -229,7 +238,7 @@ function Page() {
       {/* Products Display */}
       <div className="row flex flex-col mt-10 mb-10 ">
         <div className="p-10 max-w-full ml-auto mr-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 ">
-          {filteredProducts.length > 0 ? (
+          {
             filteredProducts.map((item: product) => (
               <div
                 key={item.id}
@@ -265,16 +274,8 @@ function Page() {
                 </div>
               </div>
             ))
-          ) : (
-            <div
-              role="status"
-              className="items-center justify-center w-full h-full text-center col-span-6"
-            >
-              {/* Loading State */}
-              <span className="sr-only">Loading...</span>
-              {/* Your loading spinner here */}
-            </div>
-          )}
+          
+            }
         </div>
       </div>
 

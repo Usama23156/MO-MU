@@ -21,7 +21,7 @@ export const fetchBrands = createAsyncThunk<brand[]>(
 
 const initialState: BrandsState = {
   data: [],
-  loading: false,
+  loading: true,
 }
 
 const brandsSlice = createSlice({

@@ -5,6 +5,8 @@ import Offers from "@/_component/offers/page";
 import AOS from "aos"
 import "aos/dist/aos.css"
 import BrandSwaper from "@/_component/brand swiper/page"
+import CategoriesSwaper from "@/_component/category swiper/page"
+import SaleHome from "@/_component/sale home/page"
 
 
 export default function Home() {
@@ -20,13 +22,16 @@ export default function Home() {
    };
    initAOS();
  }, []);
+ 
   return (
     <>
     <div>
       <Hero/>
       <BrandSwaper/>
       <img src="hero1.jpg" alt="" />
-      <Offers/>
+      {/* <Offers/> */}
+      <CategoriesSwaper/>
+       <SaleHome />
     </div>
     </>
   );

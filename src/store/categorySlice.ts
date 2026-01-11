@@ -22,7 +22,7 @@ interface CategoryState {
 
 const initialState: CategoryState = {
   data: [],
-  loading: false,
+  loading: true,
 }
 
 const categoriesSlice = createSlice({
