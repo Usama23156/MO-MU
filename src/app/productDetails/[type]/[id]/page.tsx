@@ -107,8 +107,8 @@ if (isLoading) {
         </button>
       </div>
       {showCategories && (
-        <div className="fixed inset-0 z-40 ">
-          <div className="absolute right-0 top-0 h-full w-64 bg-gray-100 border border-(--bg-color) p-4 overflow-y-auto pt-29 overflow-scroll">
+        <div className="fixed inset-0 z-40 mt-31">
+          <div className="absolute right-0 top-0 h-78 w-64 bg-gray-100 border border-(--bg-color) p-4 overflow-y-auto pt-5 overflow-scroll scroll-hidden">
             <h3 className="font-bold mb-4 text-(--bg-color)">Categories</h3>
 
             <ul className="flex flex-col gap-3">
@@ -116,7 +116,7 @@ if (isLoading) {
                 <Link
                   href="/productDetails/all/all"
                   onClick={() => setShowCategories(false)}
-                  className="text-black"
+                  className="text-black hover:text-(--bg-color) font-medium"
                 >
                   All
                 </Link>
@@ -126,7 +126,7 @@ if (isLoading) {
                 <Link
                   href="/productDetails/sales/all"
                   onClick={() => setShowCategories(false)}
-                  className="text-black"
+                  className="text-black hover:text-(--bg-color) font-medium"
                 >
                   Sales
                 </Link>
@@ -137,7 +137,7 @@ if (isLoading) {
                   <Link
                     href={`/productDetails/category/${category.id}`}
                     onClick={() => setShowCategories(false)}
-                    className="text-black"
+                    className="text-black hover:text-(--bg-color) font-medium"
                   >
                     {category.name}
                   </Link>
@@ -149,8 +149,8 @@ if (isLoading) {
       )}
       {/* Brands Panel - Mobile */}
       {showBrands && (
-        <div className="fixed inset-0 z-40 ">
-          <div className="absolute right-0 top-0 h-full w-64 bg-gray-100 border border-(--bg-color) p-4 overflow-y-auto pt-29">
+        <div className="fixed inset-0 z-40 mt-31">
+          <div className="absolute right-0 top-0 h-78 w-64 bg-gray-100 border border-(--bg-color) p-4 overflow-y-auto pt-5 scroll-hidden ">
             <h3 className="font-bold mb-4 text-(--bg-color)">Brands</h3>
 
             <ul className="flex flex-col gap-3">
@@ -159,7 +159,7 @@ if (isLoading) {
                   <Link
                     href={`/productDetails/brand/${brand.id}`}
                     onClick={() => setShowBrands(false)}
-                    className="text-black"
+                    className="text-black hover:text-(--bg-color) font-medium"
                   >
                     {brand.name}
                   </Link>

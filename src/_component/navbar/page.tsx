@@ -45,7 +45,7 @@ const page = () => {
           </Link>
           <div
             onClick={() => setOpen(!open)}
-            className={`icon md:hidden  cursor-pointer  text-(--bg-color) text-2xl  z-100001 flex  flex-wrap md:flex-nowrap justify-between items-center absolute left-35 bottom-11 ${
+            className={`icon md:hidden  cursor-pointer  text-(--bg-color) text-2xl  z-100001 flex  flex-wrap md:flex-nowrap justify-between items-center absolute left-[50%] bottom-11 ${
               scrollPosition > 50 ? "text-(--text-color)" : "text-(--bg-color)"
             }`}
           >
@@ -54,7 +54,7 @@ const page = () => {
           <div
             className={` ${
               open
-                ? "flex bg-(--bg-color) absolute md:relative top-16 left-0 w-full h-auto mt-9"
+                ? "flex bg-(--bg-color) absolute md:relative top-16 left-0 w-full h-auto mt-9 md:mt-0"
                 : "hidden"
             } md:flex flex-col md:flex-row  items-center md:justify-center  `}
           >

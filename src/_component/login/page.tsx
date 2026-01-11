@@ -37,7 +37,7 @@ function page() {
                      <FaRegCircleUser />
                    </button>
                    {dropdownOpen && (
-                     <div className="absolute right-0 mt-6 w-40 bg-(--bg-color) border border-(--text-color) shadow-lg rounded z-10 text-center">
+                     <div className="absolute right-[-55] mt-2 w-40 bg-(--bg-color) border border-(--text-color) shadow-lg rounded z-10 text-center">
                        <Link
                          href="/login"
                          onClick={() => setDropdownOpen(false)}

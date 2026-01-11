@@ -34,7 +34,7 @@ function page() {
     <div className="md:hidden flex justify-end">
       <button
         onClick={() => setShowSearch(!showSearch)}
-        className={` ${
+        className={`cursor-pointer ${
               scrollPosition > 50 ? "text-(--main-color)" : "text-(--bg-color)"
             }`}
       >
@@ -44,7 +44,7 @@ function page() {
 
     {/* 🔎 Search Input */}
     <div
-      className={`relative ${
+      className={`md:relative absolute right-20 md:right-0 w-40  border border-(--text-color) shadow-lg rounded z-10 text-center ${
         showSearch ? "block" : "hidden"
       } md:block`}
     >

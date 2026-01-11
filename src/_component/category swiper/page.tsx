@@ -43,7 +43,7 @@ export default function page() {
         {categories.map((category) => (
           <SwiperSlide key={category.id} className="flex justify-center">
             <div className="w-50 h-50 flex items-center justify-center p-2 border rounded-lg hover:shadow-md transition ">
-                <Link href={`/productDetails/brand/${category.id.toString()}`}>
+                <Link href={`/productDetails/category/${category.id.toString()}`}>
 
               <img
                 src={category.image??"/hero1.jpg"}
