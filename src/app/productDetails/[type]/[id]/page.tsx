@@ -80,8 +80,9 @@ function Page() {
   }, [filteredProducts, currentPage]);
 
   useEffect(() => {
-    setCurrentPage(1);
-  }, [type, id]);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}, [currentPage]);
+
 
   const isLoading = loading;
 
