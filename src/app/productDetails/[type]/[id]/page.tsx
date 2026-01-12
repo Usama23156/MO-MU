@@ -107,10 +107,9 @@ if (isLoading) {
         </button>
       </div>
       {showCategories && (
-        <div className="fixed inset-0 z-40 mt-31">
-          <div className="absolute right-0 top-0 h-78 w-64 bg-gray-100 border border-(--bg-color) p-4 overflow-y-auto pt-5 overflow-scroll scroll-hidden">
+        <div className="fixed inset-0 z-40 mt-31" >
+          <div className="absolute right-0 top-0 lg:h-78 h-[80%] w-64 bg-gray-100 border border-(--bg-color) p-4 overflow-y-auto pt-5 overflow-scroll scroll-hidden" data-aos="flip-right">
             <h3 className="font-bold mb-4 text-(--bg-color)">Categories</h3>
-
             <ul className="flex flex-col gap-3">
               <li>
                 <Link
@@ -150,7 +149,7 @@ if (isLoading) {
       {/* Brands Panel - Mobile */}
       {showBrands && (
         <div className="fixed inset-0 z-40 mt-31">
-          <div className="absolute right-0 top-0 h-78 w-64 bg-gray-100 border border-(--bg-color) p-4 overflow-y-auto pt-5 scroll-hidden ">
+          <div className="absolute right-0 top-0 lg:h-78 h-[80%] w-64 bg-gray-100 border border-(--bg-color) p-4 overflow-y-auto pt-5 scroll-hidden " data-aos="flip-right">
             <h3 className="font-bold mb-4 text-(--bg-color)">Brands</h3>
 
             <ul className="flex flex-col gap-3">
@@ -237,7 +236,7 @@ if (isLoading) {
       </div> */}
       {/* Products Display */}
       <div className="row flex flex-col mt-10 mb-10 ">
-        <div className="p-10 max-w-full ml-auto mr-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 ">
+        <div className="p-5 max-w-full ml-auto mr-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 ">
           {
             filteredProducts.map((item: product) => (
               <div
@@ -260,14 +259,14 @@ if (isLoading) {
                   </div>
                 </div>
                 <div className="px-5 pt-0">
-                  <h3 className="text-[0.9rem] font-medium text-black ">
+                  <h3 className="text-[0.9rem] font-medium text-black h-10">
                     {item.name}
                   </h3>
                   <span className="text-[13px] text-black">
                     {item.price} EGP
                   </span>
                 </div>
-                <div className="flex justify-center items-center mb-2 mt-2">
+                <div className="flex justify-center items-center mb-2 mt-2 bottom-0 relative">
                   <button className="bg-(--bg-color) text-white py-1 text-center transition-all duration-200 rounded-3xl px-3 cursor-pointer">
                     Add to Basket
                   </button>

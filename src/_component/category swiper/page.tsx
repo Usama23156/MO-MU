@@ -32,8 +32,8 @@ export default function page() {
         slidesPerView={2} // عدد البراندات الظاهرة في نفس الوقت على الموبايل
         breakpoints={{
           640: { slidesPerView: 3 },
-          768: { slidesPerView: 4 },
-          1024: { slidesPerView: 6 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 5 },
         }}
         navigation
         // pagination={{ clickable: true }}

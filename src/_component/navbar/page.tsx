@@ -52,12 +52,23 @@ const page = () => {
             <FontAwesomeIcon icon={faBars} />
           </div>
           <div
-            className={` ${
-              open
-                ? "flex bg-(--bg-color) absolute md:relative top-16 left-0 w-full h-auto mt-9 md:mt-0"
-                : "hidden"
-            } md:flex flex-col md:flex-row  items-center md:justify-center  `}
-          >
+  className={`
+    absolute md:static left-0 w-full
+    bg-(--bg-color) md:bg-transparent
+    overflow-hidden
+    transform-gpu
+    transition-all duration-500 ease-in-out
+    md:transform-none md:opacity-100 md:max-h-full
+    mt-25 md:mt-3
+    ${
+      open
+        ? "opacity-100 max-h-125 rotateX-0"
+        : "opacity-0 max-h-0 -rotateX-90"
+    }
+  `}
+  style={{ transformOrigin: "top" }}
+>
+
             <ul className="flex flex-col md:flex-row md:text-center justify-center items-center md:space-x-0 gap-x-6 gap-y-5 py-5 ">
               <li className="relative">
                 <Link

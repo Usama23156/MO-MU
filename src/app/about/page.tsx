@@ -10,8 +10,8 @@ import React from 'react'
               <img
                 loading="lazy"
                 alt=""
-                className=" w-full h-96 bg-center bg-cover opacity-50 bg-fixed"
-                style={{ backgroundImage: `url(/hero1.jpg)`}}
+                className=" w-full h-96 bg-center bg-cover opacity-50"
+                style={{ backgroundImage: `url(/about.jpeg)`}}
               />
             </div>
           </div>
@@ -49,7 +49,7 @@ import React from 'react'
           <div className=" pt-10">
             <img
               loading="lazy"
-              style={{ backgroundImage: `url(/hero222.jpg)` }}
+              style={{ backgroundImage: `url(/about.jpeg)` }}
               alt=""
               className="w-full h-96 bg-center bg-cover bg-fixed"
             />
