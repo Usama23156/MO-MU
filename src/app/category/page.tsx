@@ -60,13 +60,13 @@ if (isLoading) {
     //     ))}
     //   </div>
     // </div>
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-15 pt-32 ">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-15 pt-32 pb-10">
           {data.map(category  => (
             <Link
             
                 key={category.id}
                 href={`/productDetails/category/${category.id}`}
-                className="border rounded-lg p-4 text-center hover:shadow"
+                className="border rounded-lg  text-center hover:shadow"
                 
               >
                 {category.image && (

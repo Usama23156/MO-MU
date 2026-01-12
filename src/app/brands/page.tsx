@@ -29,7 +29,7 @@ if (isLoading) {
 }
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-5 pt-32" >
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-5 pt-32 pb-10" >
       {data.map(brand  => (
         <Link
             key={brand.id}

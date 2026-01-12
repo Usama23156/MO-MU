@@ -11,7 +11,7 @@ import type { product } from "@/types/products";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { FaListUl, FaTags } from "react-icons/fa";
-import Loading from "@/_component/loading/page"
+import Loading from "@/_component/loading/page";
 
 function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,13 +19,13 @@ function Page() {
   const dispatch = useDispatch<AppDispatch>();
   const [showCategories, setShowCategories] = useState(false);
   const [showBrands, setShowBrands] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
 
   const { data: categories } = useSelector(
     (state: RootState) => state.categories
   );
-  const { data: brands } = useSelector(
-    (state: RootState) => state.brands
-  );
+  const { data: brands } = useSelector((state: RootState) => state.brands);
 
   const { products, loading } = useSelector(
     (state: RootState) => state.products
@@ -71,17 +71,27 @@ function Page() {
 
     return [];
   }, [products, type, id]);
-const isLoading =
-  loading ;
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
 
-if (isLoading) {
-  return (
-    <div className="flex justify-center items-center min-h-screen text-black">
-      <Loading/>
-    </div>
-  );
-}
+  const paginatedProducts = useMemo(() => {
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    return filteredProducts.slice(start, end);
+  }, [filteredProducts, currentPage]);
 
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [type, id]);
+
+  const isLoading = loading;
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen text-black">
+        <Loading />
+      </div>
+    );
+  }
 
   return (
     <div className="pt-29">
@@ -107,8 +117,11 @@ if (isLoading) {
         </button>
       </div>
       {showCategories && (
-        <div className="fixed inset-0 z-40 mt-31" >
-          <div className="absolute right-0 top-0 lg:h-78 h-[80%] w-64 bg-gray-100 border border-(--bg-color) p-4 overflow-y-auto pt-5 overflow-scroll scroll-hidden" data-aos="flip-right">
+        <div className="fixed inset-0 z-40 mt-31">
+          <div
+            className="absolute right-0 top-0 lg:h-78 h-[80%] w-64 bg-gray-100 border border-(--bg-color) p-4 overflow-y-auto pt-5 overflow-scroll scroll-hidden"
+            data-aos="flip-right"
+          >
             <h3 className="font-bold mb-4 text-(--bg-color)">Categories</h3>
             <ul className="flex flex-col gap-3">
               <li>
@@ -149,7 +162,10 @@ if (isLoading) {
       {/* Brands Panel - Mobile */}
       {showBrands && (
         <div className="fixed inset-0 z-40 mt-31">
-          <div className="absolute right-0 top-0 lg:h-78 h-[80%] w-64 bg-gray-100 border border-(--bg-color) p-4 overflow-y-auto pt-5 scroll-hidden " data-aos="flip-right">
+          <div
+            className="absolute right-0 top-0 lg:h-78 h-[80%] w-64 bg-gray-100 border border-(--bg-color) p-4 overflow-y-auto pt-5 scroll-hidden "
+            data-aos="flip-right"
+          >
             <h3 className="font-bold mb-4 text-(--bg-color)">Brands</h3>
 
             <ul className="flex flex-col gap-3">
@@ -237,45 +253,76 @@ if (isLoading) {
       {/* Products Display */}
       <div className="row flex flex-col mt-10 mb-10 ">
         <div className="p-5 max-w-full ml-auto mr-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 ">
-          {
-            filteredProducts.map((item: product) => (
-              <div
-                key={item.id}
-                onClick={() => openModal(item)}
-                className="p-0 mb-2 flex flex-col justify-center rounded-lg border border-(--bg-color) shadow-lg hover:scale-95 transition-all duration-200 relative overflow-hidden w-full cursor-pointer px-3 "
-              >
-                {item.sale && (
-                  <div className="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-2 py-1 shadow-lg z-10">
-                    SALE
-                  </div>
-                )}
-                <div className="pb-0">
-                  <div className="aspect-square w-36 rounded-lg rounded-b-none mb-3 overflow-hidden flex items-center justify-center">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="object-contain"
-                    />
-                  </div>
+          {paginatedProducts.map((item: product) => (
+            <div
+              key={item.id}
+              onClick={() => openModal(item)}
+              className="p-0 mb-2 flex flex-col justify-center rounded-lg border border-(--bg-color) shadow-lg hover:scale-95 transition-all duration-200 relative overflow-hidden w-full cursor-pointer px-3 "
+            >
+              {item.sale && (
+                <div className="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-2 py-1 shadow-lg z-10">
+                  SALE
                 </div>
-                <div className="px-5 pt-0">
-                  <h3 className="text-[0.9rem] font-medium text-black h-10">
-                    {item.name}
-                  </h3>
-                  <span className="text-[13px] text-black">
-                    {item.price} EGP
-                  </span>
-                </div>
-                <div className="flex justify-center items-center mb-2 mt-2 bottom-0 relative">
-                  <button className="bg-(--bg-color) text-white py-1 text-center transition-all duration-200 rounded-3xl px-3 cursor-pointer">
-                    Add to Basket
-                  </button>
+              )}
+              <div className="pb-0">
+                <div className="aspect-square w-36 rounded-lg rounded-b-none mb-3 overflow-hidden flex items-center justify-center">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="object-contain"
+                  />
                 </div>
               </div>
-            ))
-          
-            }
+              <div className="px-5 pt-0">
+                <h3 className="text-[0.9rem] font-medium text-black h-10">
+                  {item.name}
+                </h3>
+                <span className="text-[13px] text-black">{item.price} EGP</span>
+              </div>
+              <div className="flex justify-center items-center mb-2 mt-2 bottom-0 relative">
+                <button className="bg-(--bg-color) text-white py-1 text-center transition-all duration-200 rounded-3xl px-3 cursor-pointer">
+                  Add to Basket
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center gap-2 mt-8">
+            {/* Prev */}
+            <button
+              disabled={currentPage === 1}
+              onClick={() => setCurrentPage((p) => p - 1)}
+              className="px-3 py-1 rounded border text-(--bg-color) cursor-pointer"
+            >
+              Prev
+            </button>
+
+            {/* Page Numbers */}
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={`px-3 py-1 rounded border ${
+                  currentPage === page
+                    ? "bg-(--bg-color) text-white"
+                    : "bg-white text-(--bg-color) cursor-pointer"
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+
+            {/* Next */}
+            <button
+              disabled={currentPage === totalPages}
+              onClick={() => setCurrentPage((p) => p + 1)}
+              className="px-3 py-1 rounded border disabled:opacity-40 text-(--bg-color) cursor-pointer"
+            >
+              Next
+            </button>
+          </div>
+        )}
       </div>
 
       {isModalOpen && (

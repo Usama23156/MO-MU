@@ -37,7 +37,7 @@ function page() {
 }, [products]);
   return (
     <div>
-      <div className="bg-gray-200 md:flex items-center justify-between px-8 py-8 mb-10 relative ">
+      <div className="bg-gray-100 md:flex items-center justify-between px-8 py-8 mb-10 relative ">
         <div className=" bg-white rounded-2xl mb-13 h-85 ">
           <img src="/offer1.jpg" alt="" className="max-w-70 md:pl-16 py-7 left-8" />
         </div>
