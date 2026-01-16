@@ -55,7 +55,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
 
   return (
     <div>
-      <div className="fixed inset-0 z-50 flex items-center justify-center mt-24">
+      <div  data-aos="flip-down"
+      className="fixed inset-0 z-50 flex items-center justify-center mt-24">
         <div className="bg-(--bg-color) rounded-2xl p-6 relative mx-5">
           <button
             onClick={onClose}
