@@ -120,16 +120,16 @@ function Page() {
       {showCategories && (
         <div className="fixed inset-0 z-40 mt-31">
           <div
-            className="absolute right-0 top-0 lg:h-78 h-[80%] w-64 bg-gray-100 border border-(--bg-color) p-4 overflow-y-auto pt-5 overflow-scroll scroll-hidden"
+            className="absolute right-0 top-0 lg:h-78 h-[80%] w-64 bg-(--bg-color) border border-(--text-color) p-4 overflow-y-auto pt-5 overflow-scroll scroll-hidden"
             data-aos="flip-right"
           >
             <ul className="flex flex-col gap-3 mr-9">
-            <h3 className="font-bold mb-1 text-(--bg-color)">الاقسام</h3>
+            <h3 className="font-bold mb-1 text-(--text-color) text-xl">الاقسام</h3>
               <li>
                 <Link
                   href="/productDetails/all/all"
                   onClick={() => setShowCategories(false)}
-                  className="text-black hover:text-(--bg-color) font-medium"
+                  className="text-(--main-color) hover:text-(--text-color) font-semibold text-96"
                 >
                   الكل
                 </Link>
@@ -139,7 +139,7 @@ function Page() {
                 <Link
                   href="/productDetails/sales/all"
                   onClick={() => setShowCategories(false)}
-                  className="text-black hover:text-(--bg-color) font-medium"
+                  className="text-(--main-color) hover:text-(--text-color) font-semibold text-96"
                 >
                   العروض
                 </Link>
@@ -150,7 +150,7 @@ function Page() {
                   <Link
                     href={`/productDetails/category/${category.id}`}
                     onClick={() => setShowCategories(false)}
-                    className="text-black hover:text-(--bg-color) font-medium"
+                    className="text-(--main-color) hover:text-(--text-color) font-semibold text-96"
                   >
                     {category.name}
                   </Link>
@@ -164,18 +164,18 @@ function Page() {
       {showBrands && (
         <div className="fixed inset-0 z-40 mt-31">
           <div
-            className="absolute right-0 top-0 lg:h-78 h-[80%] w-64 bg-gray-100 border border-(--bg-color) p-4 overflow-y-auto pt-5 scroll-hidden "
+            className="absolute right-0 top-0 lg:h-78 h-[80%] w-64 bg-(--bg-color) border border-(--text-color) p-4 overflow-y-auto pt-5 scroll-hidden "
             data-aos="flip-right"
           >
 
             <ul className="flex flex-col gap-3 mr-9">
-            <h3 className="font-bold mb-1 text-(--bg-color)">الشركات</h3>
+            <h3 className="font-bold mb-1 text-xl text-(--text-color)">الشركات</h3>
               {brands.map((brand) => (
                 <li key={brand.id}>
                   <Link
                     href={`/productDetails/brand/${brand.id}`}
                     onClick={() => setShowBrands(false)}
-                    className="text-black hover:text-(--bg-color) font-medium"
+                    className="text-(--main-color) hover:text-(--text-color) font-semibold text-96"
                   >
                     {brand.name}
                   </Link>
@@ -266,7 +266,7 @@ function Page() {
                 </div>
               )}
               <div className="pb-0">
-                <div className="aspect-square w-36 rounded-lg rounded-b-none mb-3 overflow-hidden flex items-center justify-center">
+                <div className="aspect-square w-40 rounded-lg rounded-b-none mb-3 overflow-hidden flex items-center justify-center">
                   <img
                     src={item.image}
                     alt={item.name}

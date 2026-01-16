@@ -38,16 +38,18 @@ function page() {
   return (
     <div>
       <div className="bg-gray-100 md:flex items-center justify-between px-8 py-8 mb-10 relative ">
-        <div className=" bg-white rounded-2xl mb-13 h-85 ">
-          <img src="/offer1.jpg" alt="" className="max-w-70 md:pl-16 py-7 left-8" />
+        
+        <div className=" bg-white rounded-2xl mb-13  h-85 flex flex-col items-center md:items-center-start md:pt-10 ">
+          <img src="/offer1.jpg" alt="" className="max-w-70 md:pl-16 py-7" />
         </div>
-        <Link href="/productDetails/sales/all" className="md:flex md:items-center relative left-50 bottom-16 md:left-0 md:bottom-0 ">
+        <Link href="/productDetails/sales/all" className="md:flex md:items-center relative  bottom-16 md:left-0 md:bottom-0 ">
                 <button
-                  className="bg-(--bg-color) text-xl text-(--main-color) px-2 py-2 rounded-lg font-medium transition-colors cursor-pointer "
+                  className="bg-(--bg-color) text-xl text-(--main-color) px-8 py-2 rounded-lg font-medium transition-colors cursor-pointer "
                   >
                   العروض
                 </button>
                 </Link>
+      
         <div className="grid lg:grid-cols-4 grid-cols-2 gap-x-2">
           {filteredProducts.map((item: product) => (
             <div
@@ -61,7 +63,7 @@ function page() {
                 </div>
               )}
               <div className="pb-0">
-                <div className="aspect-square w-36 rounded-lg rounded-b-none mb-3 overflow-hidden flex items-center justify-center">
+                <div className=" w-40 rounded-lg rounded-b-none mb-3 overflow-hidden flex items-center justify-center">
                   <img
                     src={item.image}
                     alt={item.name}
@@ -73,7 +75,7 @@ function page() {
                 <h3 className="text-[0.9rem] font-medium text-black ">
                   {item.name}
                 </h3>
-                <span className="text-[13px] text-black">{item.price} EGP</span>
+                <span className="text-[13px] text-black">{item.price} </span>
               </div>
               <div className="flex justify-center items-center mb-2 mt-2">
                 <button className="bg-(--bg-color) text-white py-1 text-center transition-all duration-200 rounded-3xl px-3 cursor-pointer ">

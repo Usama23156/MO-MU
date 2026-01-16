@@ -1,5 +1,7 @@
 import React from 'react'
 import Link from 'next/link';
+import { IoIosCall } from "react-icons/io";
+import { FaLocationDot } from "react-icons/fa6";
 
  const page = () => {
   return (
@@ -9,12 +11,18 @@ import Link from 'next/link';
       <img src="/logo.png" alt="" className=' max-w-14 rounded-xl'/>
       </Link>
       <div>
-        <h5 className='text-(--main-color) font-bold'>الفروع</h5>
+        <div className='flex items-center justify-between'>
+        <h5 className='text-(--main-color) font-bold text-xl'>فروعنا</h5>
+         <FaLocationDot />
+        </div>
         <p className='text-(--main-color)'>المنشيه</p>
         <p className='text-(--main-color)'>مدينه طيبه</p>
       </div>
       <div>
+        <div className='flex items-center justify-between'>
         <h5 className='text-(--main-color) font-bold'>تواصل معنا</h5>
+         <IoIosCall />
+        </div>
         <p className='text-(--main-color)'>01082277365</p>
         <p className='text-(--main-color)'>m&m@gmail.com</p>
       </div>
