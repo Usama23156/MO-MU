@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html  lang="ar" dir="rtl">
       <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col` }>
         <Providers>
           <Suspense fallback={null}>

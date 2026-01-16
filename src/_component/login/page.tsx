@@ -52,17 +52,17 @@ function page() {
           <Link
             href="/login"
             onClick={() => setDropdownOpen(false)}
-            className="block px-4 py-2 text-sm hover:bg-gray-100 text-(--text-color)"
+            className="block px-4 py-2 text-80 hover:text-(--text-color) text-(--main-color)"
           >
-            Login
+            تسجيل الدخول
           </Link>
 
           <Link
             href="/Signup"
             onClick={() => setDropdownOpen(false)}
-            className="block px-4 py-2 text-sm hover:bg-gray-100 text-(--text-color)"
+            className="block px-4 py-2 text-80 hover:text-(--text-color) text-(--main-color)"
           >
-            Signup
+            انشاء حساب
           </Link>
         </div>
       </div>

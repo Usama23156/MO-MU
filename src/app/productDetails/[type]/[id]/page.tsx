@@ -71,6 +71,7 @@ function Page() {
 
     return [];
   }, [products, type, id]);
+
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
 
   const paginatedProducts = useMemo(() => {
@@ -80,9 +81,8 @@ function Page() {
   }, [filteredProducts, currentPage]);
 
   useEffect(() => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}, [currentPage]);
-
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
 
   const isLoading = loading;
 
@@ -123,15 +123,15 @@ function Page() {
             className="absolute right-0 top-0 lg:h-78 h-[80%] w-64 bg-gray-100 border border-(--bg-color) p-4 overflow-y-auto pt-5 overflow-scroll scroll-hidden"
             data-aos="flip-right"
           >
-            <h3 className="font-bold mb-4 text-(--bg-color)">Categories</h3>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-3 mr-9">
+            <h3 className="font-bold mb-1 text-(--bg-color)">الاقسام</h3>
               <li>
                 <Link
                   href="/productDetails/all/all"
                   onClick={() => setShowCategories(false)}
                   className="text-black hover:text-(--bg-color) font-medium"
                 >
-                  All
+                  الكل
                 </Link>
               </li>
 
@@ -141,7 +141,7 @@ function Page() {
                   onClick={() => setShowCategories(false)}
                   className="text-black hover:text-(--bg-color) font-medium"
                 >
-                  Sales
+                  العروض
                 </Link>
               </li>
 
@@ -167,9 +167,9 @@ function Page() {
             className="absolute right-0 top-0 lg:h-78 h-[80%] w-64 bg-gray-100 border border-(--bg-color) p-4 overflow-y-auto pt-5 scroll-hidden "
             data-aos="flip-right"
           >
-            <h3 className="font-bold mb-4 text-(--bg-color)">Brands</h3>
 
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-3 mr-9">
+            <h3 className="font-bold mb-1 text-(--bg-color)">الشركات</h3>
               {brands.map((brand) => (
                 <li key={brand.id}>
                   <Link
@@ -262,7 +262,7 @@ function Page() {
             >
               {item.sale && (
                 <div className="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-2 py-1 shadow-lg z-10">
-                  SALE
+                 عرض
                 </div>
               )}
               <div className="pb-0">
@@ -278,11 +278,11 @@ function Page() {
                 <h3 className="text-[0.9rem] font-medium text-black h-10">
                   {item.name}
                 </h3>
-                <span className="text-[13px] text-black">{item.price} EGP</span>
+                <span className="text-[13px] text-black">{item.price} </span>
               </div>
               <div className="flex justify-center items-center mb-2 mt-2 bottom-0 relative">
                 <button className="bg-(--bg-color) text-white py-1 text-center transition-all duration-200 rounded-3xl px-3 cursor-pointer">
-                  Add to Basket
+                  اضف الي السله
                 </button>
               </div>
             </div>
@@ -296,7 +296,7 @@ function Page() {
               onClick={() => setCurrentPage((p) => p - 1)}
               className="px-3 py-1 rounded border text-(--bg-color) cursor-pointer"
             >
-              Prev
+              السابق
             </button>
 
             {/* Page Numbers */}
@@ -320,7 +320,7 @@ function Page() {
               onClick={() => setCurrentPage((p) => p + 1)}
               className="px-3 py-1 rounded border disabled:opacity-40 text-(--bg-color) cursor-pointer"
             >
-              Next
+              التالي
             </button>
           </div>
         )}

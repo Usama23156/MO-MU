@@ -43,9 +43,9 @@ function page() {
         </div>
         <Link href="/productDetails/sales/all" className="md:flex md:items-center relative left-50 bottom-16 md:left-0 md:bottom-0 ">
                 <button
-                  className="bg-black/30 text-(--main-color) px-2 py-2 rounded-lg font-medium transition-colors cursor-pointer "
+                  className="bg-(--bg-color) text-xl text-(--main-color) px-2 py-2 rounded-lg font-medium transition-colors cursor-pointer "
                   >
-                  Our Sales →
+                  العروض
                 </button>
                 </Link>
         <div className="grid lg:grid-cols-4 grid-cols-2 gap-x-2">
@@ -57,7 +57,7 @@ function page() {
             >
               {item.sale && (
                 <div className="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-2 py-1 shadow-lg z-10">
-                  SALE
+                  عرض
                 </div>
               )}
               <div className="pb-0">
@@ -77,7 +77,7 @@ function page() {
               </div>
               <div className="flex justify-center items-center mb-2 mt-2">
                 <button className="bg-(--bg-color) text-white py-1 text-center transition-all duration-200 rounded-3xl px-3 cursor-pointer ">
-                  Add to Basket
+                  اضف الي السله
                 </button>
               </div>
             </div>

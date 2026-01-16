@@ -56,7 +56,7 @@ export default function Home() {
     <div>
       <Hero/>
       <div className="px-6 md:px-20 py-10">
-      <h2 className="text-xl font-semibold mb-5 text-black">Our Brands</h2>
+      <h2 className="text-2xl font-semibold mb-5 text-black">الشركات</h2>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={20}

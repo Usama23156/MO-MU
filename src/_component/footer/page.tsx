@@ -9,14 +9,14 @@ import Link from 'next/link';
       <img src="/logo.png" alt="" className=' max-w-14 rounded-xl'/>
       </Link>
       <div>
-        <h5 className='text-black font-bold'>Branches</h5>
-        <p className='text-black'>Manshya</p>
-        <p className='text-black'>Tiba City</p>
+        <h5 className='text-(--main-color) font-bold'>الفروع</h5>
+        <p className='text-(--main-color)'>المنشيه</p>
+        <p className='text-(--main-color)'>مدينه طيبه</p>
       </div>
       <div>
-        <h5 className='text-black font-bold'>Contact Us</h5>
-        <p className='text-black'>01082277365</p>
-        <p className='text-black'>m&m@gmail.com</p>
+        <h5 className='text-(--main-color) font-bold'>تواصل معنا</h5>
+        <p className='text-(--main-color)'>01082277365</p>
+        <p className='text-(--main-color)'>m&m@gmail.com</p>
       </div>
       <div className="social-icons md:flex items-center ">
         <Link href="" className='s-i md:w-13.75 md:h-13.75 text-[2rem] text-center leading-13.75 transition-[0.2s] duration-[all] ease-linear rounded-[50%]  flex justify-center pt-2.5'> 

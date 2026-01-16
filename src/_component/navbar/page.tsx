@@ -45,14 +45,14 @@ const page = () => {
           </Link>
           <div
             onClick={() => setOpen(!open)}
-            className={`icon md:hidden  cursor-pointer  text-(--bg-color) text-2xl  z-100001 flex  flex-wrap md:flex-nowrap justify-between items-center absolute left-[50%] bottom-11 ${
-              scrollPosition > 50 ? "text-(--text-color)" : "text-(--bg-color)"
+            className={`icon md:hidden  cursor-pointer  text-(--bg-color) text-2xl  z-100001 flex  flex-wrap md:flex-nowrap justify-between items-center absolute left-[47%] bottom-11 ${
+              scrollPosition > 50 ? "text-(--main-color)" : "text-(--bg-color)"
             }`}
           >
             <FontAwesomeIcon icon={faBars} />
           </div>
           <div
-  className={`
+            className={`
     absolute md:static left-0 w-full
     bg-(--bg-color) md:bg-transparent
     overflow-hidden
@@ -61,87 +61,84 @@ const page = () => {
     md:transform-none md:opacity-100 md:max-h-full
     mt-25 md:mt-3
     ${
-      open
-        ? "opacity-100 max-h-125 rotateX-0"
-        : "opacity-0 max-h-0 -rotateX-90"
+      open ? "opacity-100 max-h-125 rotateX-0" : "opacity-0 max-h-0 -rotateX-90"
     }
   `}
-  style={{ transformOrigin: "top" }}
->
-
+            style={{ transformOrigin: "top" }}
+          >
             <ul className="flex flex-col md:flex-row md:text-center justify-center items-center md:space-x-0 gap-x-6 gap-y-5 py-5 ">
               <li className="relative">
                 <Link
                   href="/"
                   onClick={() => setOpen(false)}
-                  className={`font-bold text-base md:text-(--bg-color) text-(--text-color) ${
+                  className={`font-bold text-xl md:text-(--bg-color) text-(--main-color) ${
                     scrollPosition > 50
-                      ? "md:text-(--text-color) hover:text-(--main-color)"
-                      : "md:text-(--bg-color) hover:md:text-(--text-color) hover:text-(--main-color)"
+                      ? "md:text-(--main-color) hover:text-(--text-color)"
+                      : "md:text-(--bg-color)  hover:text-(--text-color)"
                   }`}
                 >
-                  Home
+                 الرئسيه
                 </Link>{" "}
               </li>
               <li className="relative">
                 <Link
                   href="/category"
                   onClick={() => setOpen(false)}
-                  className={`font-bold text-base md:text-(--bg-color) text-(--text-color) ${
+                  className={`font-bold text-xl md:text-(--bg-color) text-(--main-color) ${
                     scrollPosition > 50
-                      ? "md:text-(--text-color) hover:text-(--main-color)"
-                      : "md:text-(--bg-color) hover:md:text-(--text-color) hover:text-(--main-color)"
+                      ? "md:text-(--main-color) hover:text-(--text-color)"
+                      : "md:text-(--bg-color)  hover:text-(--text-color)"
                   }`}
                 >
-                  Categories
+                  الاقسام
                 </Link>{" "}
               </li>
               <li className="relative">
                 <Link
                   href="/productDetails/sales/all"
                   onClick={() => setOpen(false)}
-                  className={`font-bold text-base md:text-(--bg-color) text-(--text-color) ${
+                  className={`font-bold text-xl md:text-(--bg-color) text-(--main-color) ${
                     scrollPosition > 50
-                      ? "md:text-(--text-color) hover:text-(--main-color)"
-                      : "md:text-(--bg-color) hover:md:text-(--text-color) hover:text-(--main-color)"
+                      ? "md:text-(--main-color) hover:text-(--text-color)"
+                      : "md:text-(--bg-color)  hover:text-(--text-color)"
                   }`}
                 >
-                  Sales
+                  العروض
                 </Link>{" "}
               </li>
               <li className="relative">
                 <Link
                   href="/brands"
                   onClick={() => setOpen(false)}
-                  className={`font-bold text-base md:text-(--bg-color) text-(--text-color) ${
+                  className={`font-bold text-xl md:text-(--bg-color) text-(--main-color) ${
                     scrollPosition > 50
-                      ? "md:text-(--text-color) hover:text-(--main-color)"
-                      : "md:text-(--bg-color) hover:md:text-(--text-color) hover:text-(--main-color)"
+                      ? "md:text-(--main-color) hover:text-(--text-color)"
+                      : "md:text-(--bg-color)  hover:text-(--text-color)"
                   }`}
                 >
-                  Brands
+                  الشركات
                 </Link>{" "}
               </li>
               <li className="relative">
                 <Link
                   href="/about"
                   onClick={() => setOpen(false)}
-                  className={`font-bold text-base md:text-(--bg-color) text-(--text-color) ${
+                  className={`font-bold text-xl md:text-(--bg-color) text-(--main-color) ${
                     scrollPosition > 50
-                      ? "md:text-(--text-color) hover:text-(--main-color)"
-                      : "md:text-(--bg-color) hover:md:text-(--text-color) hover:text-(--main-color)"
+                      ? "md:text-(--main-color) hover:text-(--text-color)"
+                      : "md:text-(--bg-color)  hover:text-(--text-color)"
                   }`}
                 >
                   {" "}
-                  About Us
+                  من نحن
                 </Link>{" "}
               </li>
             </ul>
           </div>
           <div className="flex justify-center items-center gap-2">
-          <SearchBar  />
-          <Login />
-          <CartIcon />
+            <SearchBar />
+            <CartIcon />
+            <Login />
           </div>
         </div>
       </div>

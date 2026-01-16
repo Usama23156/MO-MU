@@ -25,7 +25,7 @@ export default function page() {
 
   return (
     <div className="px-6 md:px-20 py-10">
-      <h2 className="text-xl font-semibold mb-5 text-black">Our Categories</h2>
+      <h2 className="text-xl font-semibold mb-5 text-black">الاقسام</h2>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={60}

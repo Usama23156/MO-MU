@@ -28,7 +28,7 @@ function page() {
   }, [scrollPosition]);
 
   return (
-  <div className="md:pr-20">
+  <div className="md:pl-20">
 
     {/* 🔍 Search Icon - Mobile */}
     <div className="md:hidden flex justify-end">
@@ -44,7 +44,7 @@ function page() {
 
     {/* 🔎 Search Input */}
     <div
-      className={`md:relative absolute right-20 md:right-0 lg:w-70 w-40  border border-(--text-color) shadow-lg rounded z-10 text-center ${
+      className={`md:relative absolute left-20 md:right-0 lg:w-70 w-40  border border-(--text-color) shadow-lg rounded z-10 text-center ${
         showSearch ? "block" : "hidden"
       } md:block`}
     >
@@ -52,7 +52,7 @@ function page() {
         type="text"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        placeholder="Search products..."
+        placeholder="ابحث عن المنتج ..."
         className={`w-full py-1 rounded border border-(--bg-color) bg-white focus:outline-none text-(--text-color) px-3 ${
           scrollPosition > 50 ? "border-(--main-color)" : ""
         }`}

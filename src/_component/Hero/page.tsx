@@ -42,25 +42,23 @@ const page = () => {
               <div className="max-w-xl">
                 <div className="mb-4">
                   <span className="inline-block bg-white/20 text-white text-sm px-3 py-1 rounded-full">
-                    EXCLUSIVE OFFER
+                     عرض حصري
                   </span>
                   <span className="inline-block bg-(--bg-color) text-white text-sm px-3 py-1 rounded-full ml-2">
-                    20% OFF
+                    20% خصم
                   </span>
                 </div>
                 <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4 ">
-                  Specialist in the
+                   فقط علي
                   <br />
-                  order online
+                   طلبات الاونلاين
                 </h1>
-                <p className="text-white/90 text-lg mb-6">
-                  Only this week. Don't miss...
-                </p>
+               
                 <Link href="/productDetails/all/all">
                 <button
                   className="bg-(--bg-color) text-white px-6 py-3 rounded-lg font-medium transition-colors cursor-pointer"
                   >
-                  order Now →
+                   اطلب الان
                 </button>
                 </Link>
               </div>
@@ -82,25 +80,23 @@ const page = () => {
               <div className="max-w-xl">
                 <div className="mb-4">
                   <span className="inline-block bg-white/20 text-white text-sm px-3 py-1 rounded-full">
-                    EXCLUSIVE OFFER
+                     عرض حصري
                   </span>
                   <span className="inline-block bg-(--bg-color) text-white text-sm px-3 py-1 rounded-full ml-2">
-                    20% OFF
+                    20% خصم
                   </span>
                 </div>
                 <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-                  Specialist in the
+                   فقط علي
                   <br />
-                  order online
+                   طلبات الاونلاين
                 </h1>
-                <p className="text-white/90 text-lg mb-6">
-                  Only this week. Don't miss...
-                </p>
+               
                 <Link href="/productDetails/all/all">
                 <button
                   className="bg-(--bg-color) text-white px-6 py-3 rounded-lg font-medium transition-colors cursor-pointer"
                   >
-                  order Now →
+                   اطلب الان
                 </button>
                 </Link>
               </div>
