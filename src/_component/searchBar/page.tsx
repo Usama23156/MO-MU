@@ -45,7 +45,7 @@ function page() {
     {/* 🔎 Search Input */}
     <div
       className={`md:relative absolute left-20 md:right-0 lg:w-70 w-40  border border-(--text-color) shadow-lg rounded z-10 text-center ${
-        showSearch ? "block" : "hidden"
+        showSearch ? "block " : "hidden"
       } md:block`}
     >
       <input

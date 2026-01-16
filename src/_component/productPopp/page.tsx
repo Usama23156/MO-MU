@@ -85,23 +85,24 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
               <div>
                 <div className="flex flex-row-reverse justify-between items-center md:flex-col gap-2">
                   <div className="flex items-center gap-7 justify-center bg-[#F3F5F9] rounded p-1 w-full">
-                    <button
-                      onClick={() => setQuantity((q) =>  q - 1)}
-                      className="w-8 h-8 text-lg rounded cursor-pointer text-black"
-                      disabled={quantity <= 0}
-                    >
-                      −
-                    </button>
-
-                    <span className="text-black">{isNaN(quantity) ? 0 : quantity}</span>
-
-                    <button
+                    
+                     <button
                       onClick={() => setQuantity((q) => q + 1)}
 
                       className="w-8 h-8 text-lg rounded cursor-pointer text-black"
                     >
                       +
                     </button>
+
+                    <span className="text-black">{isNaN(quantity) ? 0 : quantity}</span>
+                     <button
+                      onClick={() => setQuantity((q) =>  q - 1)}
+                      className="w-8 h-8 text-lg rounded cursor-pointer text-black"
+                      disabled={quantity <= 0}
+                    >
+                      −
+                    </button>
+                   
                   </div>
 
                   <button
@@ -109,7 +110,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
                     disabled={quantity <= 0}
                     className="bg-[#F3F5F9] text-(--text-color) py-2 rounded-lg cursor-pointer w-full disabled:opacity-50"
                   >
-                    Add to Cart
+                    اضف الي السله
                   </button>
                 </div>
               </div>
