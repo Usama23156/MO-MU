@@ -77,7 +77,7 @@ const page = () => {
                       : "md:text-(--bg-color)  hover:text-(--text-color)"
                   }`}
                 >
-                 الرئسيه
+                 الرئيسية
                 </Link>{" "}
               </li>
               <li className="relative">
