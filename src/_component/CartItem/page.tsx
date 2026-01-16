@@ -23,25 +23,26 @@ export default function page({ data }: { data: any }) {
       </div>
 
       <div className="flex items-center gap-2 w-full sm:w-1/4 justify-center">
-        <button
-          onClick={decreseItems}
-          className="w-8 h-8 border rounded-full text-gray-600 cursor-pointer"
-        >
-          −
-        </button>
-        <span className="`min-w-[32px]` text-center text-sm text-gray-700">
-          {data.count}
-        </span>
+       
         <button
           onClick={increasee}
           className="w-8 h-8 border rounded-full text-gray-600 cursor-pointer"
         >
           +
         </button>
+        <span className="`min-w-[32px]` text-center text-sm text-gray-700">
+          {data.count}
+        </span>
+         <button
+          onClick={decreseItems}
+          className="w-8 h-8 border rounded-full text-gray-600 cursor-pointer"
+        >
+          −
+        </button>
       </div>
 
       <div className="text-gray-800 font-semibold w-full sm:w-1/4 text-center sm:text-left">
-        EGP {data.totalPrice.toFixed(2)}
+         {data.totalPrice.toFixed(2)}
       </div>
 
       <div className="w-full sm:w-1/4 text-center sm:text-right">
@@ -49,7 +50,7 @@ export default function page({ data }: { data: any }) {
           onClick={remooveItem}
           className="text-red-500 text-sm hover:underline cursor-pointer"
         >
-          Remove
+          حذف
         </button>
       </div>
     </div>

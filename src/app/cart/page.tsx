@@ -18,8 +18,14 @@ const Page = () => {
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-4">
       {items.length < 1 ? (
-        <div className="flex justify-center items-center py-40 text-mainColor text-center h-[85vh]">
-          <h1 className="text-2xl sm:text-3xl text-black">Cart Is Empty</h1>
+        <div className="flex flex-col justify-center items-center py-40 text-mainColor text-center h-[85vh]">
+          <h1 className="text-2xl sm:text-3xl text-black">الكارت فاضي </h1>
+          <Link
+                href="/productDetails/all/all"
+                className="bg-(--bg-color) text-white py-2 text-center hover:bg-orange-400 transition-all duration-200 rounded-3xl px-3 cursor-pointer"
+              >
+                ابدا الطلب
+              </Link>
         </div>
       ) : (
         <div className="max-w-5xl mx-auto w-full text-sm text-left text-gray-500 dark:text-gray-400 space-y-4 mt-28 mb-10 min-h-[70vh]">
@@ -30,24 +36,24 @@ const Page = () => {
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mt-6">
             <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center">
               <div className="text-lg sm:text-2xl font-medium">
-                Total Price:
+                المجموع:
               </div>
               <div className="text-lg sm:text-2xl text-mainColor font-semibold">
-                EGP {totalPrice.toFixed(2)}
+               {totalPrice.toFixed(2)}
               </div>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/checkout"
-className="bg-(--bg-color) text-white py-2 text-center hover:bg-(--main-color) transition-all duration-200 rounded-3xl px-3 cursor-pointer"              >
-                Checkout
+className="bg-(--bg-color) text-white py-2 text-center hover:bg-orange-400  transition-all duration-200 rounded-3xl px-3 cursor-pointer"              >
+                 تاكيد الطلب
               </Link>
               <Link
-                href="menu"
-                className="bg-(--bg-color) text-white py-2 text-center hover:bg-(--main-color) transition-all duration-200 rounded-3xl px-3 cursor-pointer"
+                href="/productDetails/all/all"
+                className="bg-(--bg-color) text-white py-2 text-center hover:bg-orange-400 transition-all duration-200 rounded-3xl px-3 cursor-pointer"
               >
-                Continue Shopping
+                كمل طلبات
               </Link>
             </div>
         </div>
