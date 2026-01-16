@@ -37,7 +37,7 @@ function page() {
 
         <div
           className={`
-    absolute right-[-55] mt-2 w-40
+    absolute left-[1] mt-2 w-40
     bg-(--bg-color) border border-(--text-color)
     shadow-lg rounded z-50 text-center
     transform origin-top
